@@ -20,6 +20,7 @@ Hibernate also selects fields (like `countOfKitten`) that are no properties of a
 ```
 insert into animal (barks, toys, dtype, id) values (?, ?, 'Dog', ?)
 select a1_0.id,a1_0.dtype,a1_0.count_of_kitten,a1_0.toys,a1_0.barks from animal a1_0
+```
 
 # Complete exception stack trace
 ```
