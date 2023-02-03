@@ -16,6 +16,12 @@ This occurs because Hibernate tries to deserialize the JSON into the wrong type.
 It seems that Hibernate always uses the same type mapping for both JSON type properties (`Cat.toys` and `Dog.toys`). It seems that
 it's always the first alphabetical match (`CatToys` here). `AnimalActionRepositoryTest.shouldReadOnlyACat` works fine.
 
+Hibernate also selects fields (like `countOfKitten`) that are no properties of a `Dog`.
+```
+insert into animal (barks, toys, dtype, id) values (?, ?, 'Dog', ?)
+select a1_0.id,a1_0.dtype,a1_0.count_of_kitten,a1_0.toys,a1_0.barks from animal a1_0
+
+# Complete exception stack trace
 ```
 Hibernate: insert into animal (barks, toys, dtype, id) values (?, ?, 'Dog', ?)
 Hibernate: select a1_0.id,a1_0.dtype,a1_0.count_of_kitten,a1_0.toys,a1_0.barks from animal a1_0
