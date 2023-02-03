@@ -17,9 +17,6 @@ It seems that Hibernate always uses the same type mapping for both JSON type pro
 it's always the first alphabetical match (`CatToys` here). `AnimalActionRepositoryTest.shouldReadOnlyACat` works fine.
 
 ```
-2023-02-03T08:12:51.674+01:00  INFO 18427 --- [           main] c.e.h.repository.AnimalRepositoryTest    : Started AnimalRepositoryTest in 1.435 seconds (process running for 2.245)
-Hibernate: insert into animal (count_of_kitten, toys, dtype, id) values (?, ?, 'Cat', ?)
-Hibernate: select a1_0.id,a1_0.dtype,a1_0.count_of_kitten,a1_0.toys,a1_0.barks from animal a1_0
 Hibernate: insert into animal (barks, toys, dtype, id) values (?, ?, 'Dog', ?)
 Hibernate: select a1_0.id,a1_0.dtype,a1_0.count_of_kitten,a1_0.toys,a1_0.barks from animal a1_0
 
