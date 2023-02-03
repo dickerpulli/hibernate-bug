@@ -24,9 +24,6 @@ select a1_0.id,a1_0.dtype,a1_0.count_of_kitten,a1_0.toys,a1_0.barks from animal 
 
 # Complete exception stack trace
 ```
-Hibernate: insert into animal (barks, toys, dtype, id) values (?, ?, 'Dog', ?)
-Hibernate: select a1_0.id,a1_0.dtype,a1_0.count_of_kitten,a1_0.toys,a1_0.barks from animal a1_0
-
 org.springframework.orm.jpa.JpaSystemException: Unable to extract JDBC value for position `4`
 
 	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:321)
